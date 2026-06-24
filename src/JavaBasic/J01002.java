@@ -10,5 +10,6 @@ public class J01002 {
 			int n = sc.nextInt();
 			System.out.println((long)n * (n + 1) / 2);
 		}
+		sc.close();
 	}
 }

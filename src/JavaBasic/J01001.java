@@ -13,5 +13,6 @@ public class J01001 {
 		else{
 			System.out.print((length + width) * 2 + " " + length * width);
 		}
+		sc.close();
 	}
 }
