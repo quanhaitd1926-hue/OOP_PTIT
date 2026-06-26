@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.Scanner;
 
@@ -29,20 +28,20 @@ public String toString(){
 }
 
 public class J07034 {
-public static void main(String[] args) {
-	try (Scanner sc = new Scanner(new BufferedReader(new FileReader("MONHOC.in")))) {
-		int t = Integer.valueOf(sc.nextLine());
-		ArrayList<Subject> arr = new ArrayList<>();
-		while(t-- > 0){
-			String idSub = sc.nextLine();
-			String nameSub = sc.nextLine();
-			int creditNumber = Integer.valueOf(sc.nextLine());
-			arr.add(new Subject(idSub, nameSub, creditNumber));
+	public static void main(String[] args) {
+		try (Scanner sc = new Scanner(new BufferedReader(new FileReader("MONHOC.in")))) {
+			int t = Integer.valueOf(sc.nextLine());
+			ArrayList<Subject> arr = new ArrayList<>();
+			while(t-- > 0){
+				String idSub = sc.nextLine();
+				String nameSub = sc.nextLine();
+				int creditNumber = Integer.valueOf(sc.nextLine());
+				arr.add(new Subject(idSub, nameSub, creditNumber));
+			}
+			arr.sort(Comparator.comparing(Subject::getNameSub));
+			arr.forEach(sub -> System.out.println(sub));
+		} catch (FileNotFoundException e) {
+			System.out.println(e);
 		}
-		arr.sort(Comparator.comparing(Subject::getNameSub));
-		arr.forEach(sub -> System.out.println(sub));
-	} catch (FileNotFoundException e) {
-		System.out.println(e);
 	}
-}
 }
