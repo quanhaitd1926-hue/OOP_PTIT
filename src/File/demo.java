@@ -5,7 +5,6 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.HashMap;
 import java.util.Scanner;
-
 public class demo {
 	public static void main(String[] args) {
 		try (Scanner sc = new Scanner(new BufferedReader(new FileReader("DATA.in")))) {
